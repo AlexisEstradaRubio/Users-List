@@ -1,3 +1,5 @@
-Install: yarn 
+Install: 
+yarn 
 
-Run repo: yarn start
+Run repo: 
+yarn start
