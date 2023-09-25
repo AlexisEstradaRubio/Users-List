@@ -7,10 +7,12 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "black",
     paddingTop: Constants.statusBarHeight + 10,
+    paddingBottom: 10,
     flexDirection: 'row',
   },
   text: {
     color: "#fff",
+    fontSize: 17,
     paddingHorizontal: 10,
   },
   scroll: {
@@ -18,7 +20,7 @@ const styles = StyleSheet.create({
   }
 });
 
-const AppBarTab = ( {active, children, to}) => {
+const AppBarTab = ( {children, to}) => {
   return (
     <Link to={to} >
       <Text style={styles.text}>
