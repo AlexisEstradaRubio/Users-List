@@ -3,7 +3,7 @@ import { Formik, useField } from "formik";
 import { Button, StyleSheet, View, Text, Alert } from "react-native";
 import StyledTextInput from "../components/StyledTextInput.jsx";
 import { loginValidationSchema } from "../validationSchemas/login.js";
-import { redirect } from "react-router-native";
+import { redirect, Outlet } from "react-router-dom";
 
 const initialValues = {
   email: "",
@@ -50,11 +50,16 @@ const userNotValid = () =>
     ]
   );
 
+  const userValid = () => {
+    return redirect("userList");
+  }
+
+
 const validateUsers = (userData) => {
   const { email, password } = userData;
 
   if (email.toLowerCase() === "admin" && password.toLowerCase() === "test") {
-    return redirect("/userList");
+    return userValid();
   } else {
     return userNotValid();
   }
@@ -62,6 +67,8 @@ const validateUsers = (userData) => {
 
 export default function LogInPage() {
   return (
+    <>
+
     <Formik
       validationSchema={loginValidationSchema}
       initialValues={initialValues}
@@ -81,5 +88,7 @@ export default function LogInPage() {
         );
       }}
     </Formik>
+    <Outlet />
+    </>
   );
 }

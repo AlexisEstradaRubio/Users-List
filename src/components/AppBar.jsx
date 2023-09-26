@@ -37,6 +37,7 @@ const AppBar = () => {
       <AppBarTab active to='/company'>Login empresa </AppBarTab>
       <AppBarTab to='/employees'>Login empleado </AppBarTab>
       <AppBarTab to='/post'>Ver posts </AppBarTab>
+      <AppBarTab to='/userList'>Lista de usuarios </AppBarTab>
       </ScrollView> 
     </View>
   );
